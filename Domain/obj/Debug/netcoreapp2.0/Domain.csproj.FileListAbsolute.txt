@@ -1,6 +1,5 @@
 C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\bin\Debug\netcoreapp2.0\Domain.deps.json
 C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\bin\Debug\netcoreapp2.0\Domain.dll
-C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\obj\Debug\netcoreapp2.0\Domain.csprojResolveAssemblyReference.cache
 C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\obj\Debug\netcoreapp2.0\Domain.csproj.CoreCompileInputs.cache
 C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfoInputs.cache
 C:\Desenvolvimento de Software\VS\CadastroProduto\Domain\obj\Debug\netcoreapp2.0\Domain.AssemblyInfo.cs

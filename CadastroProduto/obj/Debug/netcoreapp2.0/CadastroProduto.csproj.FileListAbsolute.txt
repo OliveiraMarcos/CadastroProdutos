@@ -9,3 +9,7 @@ C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\obj\Debug\netc
 C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\bin\Debug\netcoreapp2.0\CadastroProduto.pdb
 C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\obj\Debug\netcoreapp2.0\CadastroProduto.dll
 C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\obj\Debug\netcoreapp2.0\CadastroProduto.pdb
+C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\bin\Debug\netcoreapp2.0\Domain.dll
+C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\bin\Debug\netcoreapp2.0\Repository.dll
+C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\bin\Debug\netcoreapp2.0\Repository.pdb
+C:\Desenvolvimento de Software\VS\CadastroProduto\CadastroProduto\bin\Debug\netcoreapp2.0\Domain.pdb
