@@ -1,4 +1,5 @@
 ﻿using Domain.Entity;
+using Domain.Interface;
 using Microsoft.EntityFrameworkCore;
 using Repository.Interface;
 using System;
@@ -41,8 +42,15 @@ namespace Repository.Class
 
         public void Update(T entity)
         {
-            this._context.Set<T>().Attach(entity);
-            this._context.Entry(entity).State = EntityState.Modified;
+            Update((entity as IBaseEntity).Id, entity);
+        }
+
+        public void Update(int Id, T entity)
+        {
+            T ObjEntity = GetOne(Id);
+            this._context.Entry(ObjEntity).CurrentValues.SetValues(entity);
+            this._context.Set<T>().Attach(ObjEntity);
+            this._context.Entry(ObjEntity).State = EntityState.Modified;
             this._context.SaveChanges();
         }
     }

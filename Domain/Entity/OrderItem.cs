@@ -1,10 +1,12 @@
 namespace Domain.Entity
 {
+    using Domain.Interface;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("OrderItem")]
-    public partial class OrderItem
+    public partial class OrderItem : IBaseEntity
     {
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int OrderId { get; set; }

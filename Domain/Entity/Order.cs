@@ -1,12 +1,13 @@
 namespace Domain.Entity
 {
+    using Domain.Interface;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("Order")]
-    public partial class Order
+    public partial class Order: IBaseEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order()
@@ -14,6 +15,7 @@ namespace Domain.Entity
             OrderItem = new HashSet<OrderItem>();
         }
 
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public int CustomerId { get; set; }

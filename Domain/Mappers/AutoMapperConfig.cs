@@ -12,6 +12,9 @@ namespace Domain.Mappers
         public AutoMapperConfig()
         {
             CreateMap<Order, OrderViewModel>().ReverseMap();
+            CreateMap<Customer, CustomerViewModel>().ReverseMap();
+            CreateMap<OrderItem, OrderItemViewModel>().ReverseMap();
+            CreateMap<Product, ProductViewModel>().ReverseMap();
         }
     }
 }

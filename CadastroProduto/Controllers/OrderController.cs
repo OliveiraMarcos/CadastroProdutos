@@ -5,57 +5,58 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Domain.Entity;
 using Domain.ViewModels;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Repository.Interface;
+using Repository.Mediator.OrderClass;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CadastroProduto.Controllers
 {
     [Route("api/[controller]")]
-    public class OrderController : Controller
+    public class OrderController : AbstractBaseController
     {
-        private IMapper _mapper;
-        private IOrderRepository _rep;
+        private readonly IMediator _mediatr;
 
-
-        public OrderController(IMapper mapper, IOrderRepository rep)
+        public OrderController(IMediator mediatr)
         {
-            this._mapper = mapper;
-            this._rep = rep;
+            _mediatr = mediatr;
         }
 
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method="GET"}).Result);
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public OrderViewModel Get(int id)
+        public IActionResult Get(int id)
         {
-            Order o = this._rep.GetOne(id);
-            return this._mapper.Map<Order, OrderViewModel>(o);
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "GET", Id=id }).Result);
         }
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]OrderViewModel value)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "POST", ObjectView = value }).Result);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]OrderViewModel value)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "PUT", Id=id, ObjectView=value }).Result);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "DELETE", Id=id }).Result);
         }
     }
 }

@@ -11,9 +11,10 @@ namespace CadastroProduto.Controllers
     {
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var obj = new string[] { "value1", "value2" };
+            return Ok(obj);
         }
 
         // GET api/values/5

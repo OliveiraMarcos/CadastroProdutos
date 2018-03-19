@@ -12,8 +12,8 @@ namespace Domain.ViewModels
         public DateTime DeliveryDate { get; set; }
         public bool TaxExempt { get; set; }
         public string Observation { get; set; }
-        public virtual Customer Customer { get; set; }
-        public virtual ICollection<OrderItem> OrderItem { get; set; }
+        public CustomerViewModel Customer { get; set; }
+        public ICollection<OrderItemViewModel> OrderItem { get; set; }
         public decimal Total
         {
             get

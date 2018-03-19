@@ -2,45 +2,57 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Domain.ViewModels;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Repository.Mediator.CustomerClass;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CadastroProduto.Controllers
 {
     [Route("api/[controller]")]
-    public class CustomerController : Controller
+    public class CustomerController : AbstractBaseController
     {
+        private readonly IMediator _mediatr;
+        public CustomerController(IMediator mediatr)
+        {
+            _mediatr = mediatr;
+
+        }
         // GET: api/<controller>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "GET"}).Result);
         }
 
         // GET api/<controller>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "GET", Id=id }).Result);
         }
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]CustomerViewModel value)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "POST", ObjectView=value }).Result);
         }
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody]CustomerViewModel value)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "PUT", Id=id, ObjectView=value }).Result);
         }
 
         // DELETE api/<controller>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            return GetContentByStatusCode(_mediatr.Send(new CustomerMediator() { Method = "DELETE", Id=id }).Result);
         }
     }
 }

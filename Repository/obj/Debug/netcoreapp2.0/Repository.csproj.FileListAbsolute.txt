@@ -1,11 +1,11 @@
+C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.csprojResolveAssemblyReference.cache
+C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache
+C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
+C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\bin\Debug\netcoreapp2.0\Repository.deps.json
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\bin\Debug\netcoreapp2.0\Repository.dll
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\bin\Debug\netcoreapp2.0\Repository.pdb
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\bin\Debug\netcoreapp2.0\Domain.dll
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\bin\Debug\netcoreapp2.0\Domain.pdb
-C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.csprojResolveAssemblyReference.cache
-C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.csproj.CoreCompileInputs.cache
-C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfoInputs.cache
-C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.AssemblyInfo.cs
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.dll
 C:\Desenvolvimento de Software\VS\CadastroProduto\Repository\obj\Debug\netcoreapp2.0\Repository.pdb
