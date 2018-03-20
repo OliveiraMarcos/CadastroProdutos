@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,19 +8,17 @@ using Domain.ValidatorViewModel;
 using Domain.ViewModels;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MediatR;
 using Repository.Class;
 using Repository.Interface;
-using Microsoft.AspNetCore.SpaServices.Webpack;
 
-namespace CadastroProduto
+namespace WebAPICoreAngular
 {
     public class Startup
     {
@@ -35,7 +33,7 @@ namespace CadastroProduto
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                .AddFluentValidation(x => {});
+                .AddFluentValidation(x => { });
             services.AddAutoMapper();
             services.AddMediatR();
             string connectionString = Configuration.GetSection("ConnectionStrings")
@@ -55,14 +53,33 @@ namespace CadastroProduto
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
+                {
+                    HotModuleReplacement = true
+                });
             }
-            app.UseMvc();
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+            }
 
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
+            });
         }
     }
 }

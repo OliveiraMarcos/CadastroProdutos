@@ -5,9 +5,11 @@ VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CadastroProduto", "CadastroProduto\CadastroProduto.csproj", "{A19948E6-E2D6-4683-AE12-6A41020A49D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{71E74134-C5B3-4057-B8C9-A9119B8DB1E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{71E74134-C5B3-4057-B8C9-A9119B8DB1E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{7DA919C4-D57C-4441-83C9-9FD68B894950}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{7DA919C4-D57C-4441-83C9-9FD68B894950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPICoreAngular", "WebAPICoreAngular\WebAPICoreAngular.csproj", "{8DF7E590-96CD-4DB5-BD24-E65CEA052D4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{7DA919C4-D57C-4441-83C9-9FD68B894950}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7DA919C4-D57C-4441-83C9-9FD68B894950}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7DA919C4-D57C-4441-83C9-9FD68B894950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF7E590-96CD-4DB5-BD24-E65CEA052D4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF7E590-96CD-4DB5-BD24-E65CEA052D4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF7E590-96CD-4DB5-BD24-E65CEA052D4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF7E590-96CD-4DB5-BD24-E65CEA052D4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
